@@ -96,28 +96,4 @@ export const Steps = [
         "<p>Remember, fitness is not a destination, it's a journey. Embrace the process, stay consistent, and enjoy the progress!</p>",
       ],
     },
-    {
-      id: "Reset",
-      attachTo: { element: "#Reset", on: "bottom" },
-      buttons: [
-        {
-          classes: "btn btn-error btn-sm mr-2 mt-2", // Added mr-2 for margin-right
-          text: "Exit",
-          action() {
-            return this.cancel();
-          },
-        },
-        {
-          classes: "btn btn-success btn-sm mt-2", 
-          text: "See Ya",
-          action() {
-            return this.complete();
-          },
-        },
-      ],
-      title: "<span class='text-lg font-bold'>One Last Thing !</span>",
-      text: [
-        "<p>You can reset your stats from here ......</p>",
-      ],
-    },
   ];
