@@ -24,6 +24,12 @@ After starting the application, users can input their personal data (height, wei
 ## Dependencies 
 The project uses Tailwind CSS and Daisy UI for the Design Part , ShepherdPro for the introduction .
 
+## ScreenShots
+![image](https://github.com/Piyusharora2003/HealthTrack/assets/74443858/67da2a64-2432-4ef7-b1a5-3d6b19880706)
+![image](https://github.com/Piyusharora2003/HealthTrack/assets/74443858/126216b9-ee78-441a-91a7-906f0d0284d0)
+![image](https://github.com/Piyusharora2003/HealthTrack/assets/74443858/ce785e38-d451-494b-a276-8c50a0a57dd7)
+
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
