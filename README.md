@@ -15,7 +15,8 @@ This project is a fitness tracker application that helps users monitor and manag
 1. Clone the repository: `git clone https://github.com/yourusername/fitness-tracker.git`
 2. Navigate to the project directory: `cd fitness-tracker`
 3. Install the dependencies: `npm install`
-4. Start the application: `npm start`
+4. Start the build: `npm build`
+5. Start the application: `npm run dev` or `npm run start`
 
 ## Usage
 
