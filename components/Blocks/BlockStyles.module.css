@@ -1,0 +1,11 @@
+.blockHeightAdjustable:hover div {
+    width: 100%;
+    height: auto;
+    text-overflow: initial;
+    overflow: initial;
+    white-space:initial;
+    color: rgb(253, 253, 253);
+}
+.blockHeightAdjustable:hover  {
+    overflow: visible;
+}
