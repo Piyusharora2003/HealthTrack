@@ -4,7 +4,7 @@ import connectDB from "./ConnectDB";
 
 export default async function addToDb(userData , state) {
     // console.log("adding to db called");
-    console.log(userData);
+    // console.log(userData);
     try{
         await connectDB();
         const { Age, Weight , Height , Gender } = userData;
@@ -16,7 +16,7 @@ export default async function addToDb(userData , state) {
             state: state
         });
         await newUser.save();
-        console.log("Data Added to Database" , newUser);
+        // console.log("Data Added to Database" , newUser);
         return true; 
     }
     catch(err) {
