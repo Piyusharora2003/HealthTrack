@@ -5,5 +5,5 @@ export async function fetchState(latitude, longitude) {
     const response = await fetch(api);
     const data = await response.json();
     console.log("new user from : " , data);
-    return data.address.state;
+    return ` ${data.address.state} , ${data.address.county} ` ;
   }

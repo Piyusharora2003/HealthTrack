@@ -39,9 +39,10 @@ function page() {
   useEffect(()=>{
     if(Object.keys(userData).length !== 0 && localStorage.getItem("locShared") === null  && localStorage.getItem("User_location") !== null) {
       const state =  localStorage.getItem("User_location");
+      let [ user_state , user_city] = state.split(",");
       async function addDb() {
-        
-        const stat = await addToDb(userData, state);
+          console.log("Adding to db called ");
+        const stat = await addToDb(userData, user_state, user_city);
         if(stat === true) localStorage.setItem("locShared", true);
       }
       addDb();

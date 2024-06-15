@@ -21,6 +21,9 @@ const userSchema = new Schema({
   state: {
     type: String,
     required: true
+  },
+  city: {
+    type: String,
   }
 });
 
