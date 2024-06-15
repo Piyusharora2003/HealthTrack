@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./BlockStyles.module.css";
+import { calculateBFP } from '@/BasicFunctions/HealthIndexes';
 
 // interface userData {
 //     Height: number; 
@@ -8,17 +9,6 @@ import styles from "./BlockStyles.module.css";
 //     Gender : "Male" | "Female"
 // }
 
-function calculateBFP(height, gender , age , weight) {  
-    height = height / 100;
-    const bmi = weight / (height * height);
-    let bfp;
-    if (gender === "Male") {
-        bfp = 1.20 * bmi + 0.23 * age - 16.2;
-    } else {
-        bfp = 1.20 * bmi + 0.23 * age - 5.4;
-    }
-    return bfp.toFixed(2);
-}
 
 //  Categories are : [Essential Fat, Athletes, Fitness, Average, Obese]
 function findCategory(bfp , Gender) {

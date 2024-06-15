@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { ShepherdJourneyProvider, useShepherd } from "react-shepherd";
-import { Steps } from "./steps.js";
 
 import Navbar from "@/components/Navbar.jsx";
 import InputUserForm from "@/components/InputUserForm.jsx";
 import Home from "@/components/Home.jsx";
 import { useEffect } from "react";
+import { fetchState } from "@/BasicFunctions/SetGeoLocations";
+import addToDb from "@/BasicFunctions/addToDb";
 
 
 function page() {
@@ -20,7 +21,31 @@ function page() {
     }
   },[]);
 
-  
+  useEffect(()=>{
+    const userLocation = localStorage.getItem("User_location");
+    if ( !userLocation ) {
+      window.navigator.geolocation.getCurrentPosition((position) => {
+        // console.log(position.coords);
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        
+        fetchState(latitude, longitude).then((state) =>{ 
+          localStorage.setItem("User_location", state);
+        });
+      });
+    }
+  },[])
+
+  useEffect(()=>{
+    if(Object.keys(userData).length !== 0 && localStorage.getItem("locShared") === null  && localStorage.getItem("User_location") !== null) {
+      const state =  localStorage.getItem("User_location");
+      async function addDb() {
+        const stat = await addToDb(userData, state);
+        if(stat === true) localStorage.setItem("locShared", true);
+      }
+      addDb();
+    }
+  },[userData]);
 
   return (
     <ShepherdJourneyProvider>

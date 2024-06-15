@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./BlockStyles.module.css";
+import { calculateBMI } from '@/BasicFunctions/HealthIndexes';
 
 // interface userData {
 //     Height: number;
@@ -8,11 +9,6 @@ import styles from "./BlockStyles.module.css";
 //     Gender : "Male" | "Female"
 // }
 
-function calculateBMI(height, weight) {
-    height = height / 100;
-    const bmi = weight / (height * height);
-    return bmi.toFixed(2); 
-}
 
 function bmiCategory(bmi) {
     let Category = '';

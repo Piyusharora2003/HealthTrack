@@ -1,22 +1,8 @@
 "use client";
 import React from 'react'
 import styles from "./BlockStyles.module.css";
-// interface userData {
-//     Height: number;
-//     Weight: number;
-//     Age: number;
-//     Gender : "Male" | "Female"
-// }
+import { calculateBMR } from '@/BasicFunctions/HealthIndexes';
 
-function calculateBMR(height, weight, age, gender) {
-    let bmr;
-    if (gender === 'Male') {
-        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-    } else {
-        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-    }
-    return bmr.toFixed(2);
-}
 
 function BMR({userData}) {
         const {Height , Weight , Age , Gender} = userData;

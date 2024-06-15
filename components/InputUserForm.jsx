@@ -15,7 +15,6 @@ function CompareArray(arr1, arr2) {
     return false;
 }
 
-
 function InputUserForm({setuserData}) {
 
     const [userData, setData] = useState({
@@ -24,8 +23,15 @@ function InputUserForm({setuserData}) {
 
     function handleSubmit() {
         if( CompareArray(Object.keys(userData) , keys.map(key => key.name) )) {
+            const userBmi = calculateBMI(userData.Height, userData.Weight);
+            if (userBmi < 10 || userBmi > 50) {
+                const response = confirm("You sure you entered the correct height and weight? ");
+                if(response === false) {
+                    return;
+                }
+                alert("Please enter the correct height and weight");
+            }
             setuserData(userData);
-            // store in Local Storage
             localStorage.setItem("UserData_Health_Tracker", JSON.stringify(userData));
         }else {
             alert("Please fill all the details");
@@ -70,6 +76,7 @@ function InputUserForm({setuserData}) {
             {/* Submit Button */}
             <input type="submit" value="Submit" className="btn btn-primary mx-auto mt-3"
                 onClick={() => {
+
                     handleSubmit();
                 }}
             />

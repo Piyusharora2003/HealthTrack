@@ -20,6 +20,7 @@ function Navbar({showResetBtn}) {
             id='Reset'
             onClick={() => {
               localStorage.removeItem("UserData_Health_Tracker");
+              localStorage.removeItem("locShared");
               window.location.reload();
             }}  
             >   
