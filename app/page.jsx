@@ -40,6 +40,7 @@ function page() {
     if(Object.keys(userData).length !== 0 && localStorage.getItem("locShared") === null  && localStorage.getItem("User_location") !== null) {
       const state =  localStorage.getItem("User_location");
       async function addDb() {
+        
         const stat = await addToDb(userData, state);
         if(stat === true) localStorage.setItem("locShared", true);
       }

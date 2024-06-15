@@ -1,6 +1,7 @@
 "use client";
 import React , { useEffect, useState } from 'react'
 import { keys } from './data.js';
+import { calculateBMI } from '@/BasicFunctions/HealthIndexes.js';
 
 function CompareArray(arr1, arr2) {
     if(arr1.length === arr2.length) {
