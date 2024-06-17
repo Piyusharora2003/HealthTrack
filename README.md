@@ -9,6 +9,7 @@ This project is a fitness tracker application that helps users monitor and manag
 - Ideal Body Weight Calculation
 - Recommended Exercise Suggestions
 - Body Fat Percentage Calculation
+- Data Analysis Done in "https://github.com/Piyusharora2003/HealthTrack---Analysis"
 
 ## Installation
 
